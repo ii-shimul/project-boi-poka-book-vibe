@@ -1,12 +1,13 @@
-import { StrictMode } from 'react'
-import { createRoot } from 'react-dom/client'
-import './index.css'
+import { StrictMode } from "react";
+import { createRoot } from "react-dom/client";
+import "./index.css";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import Root from './components/Root/Root';
-import ErrorPage from './components/Errorpage/Errorpage';
-import Home from './components/Home/Home';
-import Dashboard from './components/Dashboard/Dashboard';
-import BookDetail from './components/BookDetail/BookDetail';
+import Root from "./components/Root/Root";
+import ErrorPage from "./components/Errorpage/Errorpage";
+import Home from "./components/Home/Home";
+import Dashboard from "./components/Dashboard/Dashboard";
+import BookDetail from "./components/BookDetail/BookDetail";
+import ListedBooks from "./components/ListedBooks/ListedBooks";
 
 const router = createBrowserRouter([
   {
@@ -15,19 +16,24 @@ const router = createBrowserRouter([
     errorElement: <ErrorPage></ErrorPage>,
     children: [
       {
-        path: '/',
-        element: <Home></Home>
+        path: "/",
+        element: <Home></Home>,
       },
       {
-        path: '/dashboard',
-        element: <Dashboard></Dashboard>
+        path: "/dashboard",
+        element: <Dashboard></Dashboard>,
       },
       {
-        path: 'books/:bookId',
+        path: "/listedBooks",
+        element: <ListedBooks></ListedBooks>,
+        loader: () => fetch("booksData.json"),
+      },
+      {
+        path: "books/:bookId",
         element: <BookDetail></BookDetail>,
-        loader: () => fetch('booksData.json')
-      }
-    ]
+        loader: () => fetch("booksData.json"),
+      },
+    ],
   },
 ]);
 

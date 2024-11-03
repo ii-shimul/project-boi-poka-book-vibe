@@ -30,14 +30,16 @@ const NavBar = () => {
               <NavLink to={"/"}>Home</NavLink>
             </li>
             <li>
-              <a>Listed Books</a>
+              <NavLink to={"/listedBooks"}>Listed Books</NavLink>
             </li>
             <li>
               <a>Pages to read</a>
             </li>
           </ul>
         </div>
-        <Link to={'/'} className="btn btn-ghost text-xl">Book Vibe</Link>
+        <Link to={"/"} className="btn btn-ghost text-xl">
+          Book Vibe
+        </Link>
       </div>
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal px-1">
@@ -45,7 +47,7 @@ const NavBar = () => {
             <NavLink to={"/"}>Home</NavLink>
           </li>
           <li>
-            <a>Listed Books</a>
+            <NavLink to={"/listedBooks"}>Listed Books</NavLink>
           </li>
           <li>
             <a>Pages to read</a>

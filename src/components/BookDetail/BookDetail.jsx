@@ -78,7 +78,7 @@ const BookDetail = () => {
           </tr>
         </table>
         <div className="flex gap-4 mt-5">
-          <button onClick={()=> handleReadList(bookId)} className="btn btn-ghost btn-outline shadow-md">Read</button>
+          <button onClick={()=> handleReadList(bookId)} className="btn btn-ghost btn-outline shadow-md">Mark as Read</button>
           <button onClick={() => handleWishlist(bookId)} className="btn btn-accent">
             Add to Wishlist
           </button>
